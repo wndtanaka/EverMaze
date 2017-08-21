@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6c556ee8d6587c746932b0b526c0ffc8
+timeCreated: 1503269623
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: never ending maze
+  fontNames:
+  - never ending maze
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
