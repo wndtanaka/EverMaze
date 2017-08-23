@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace GUIManager
+namespace Maze
 {
     public class OptionsManager : MonoBehaviour
     {

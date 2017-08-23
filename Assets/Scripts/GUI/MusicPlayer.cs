@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MusicPlayer : MonoBehaviour
+namespace Maze
 {
-    static MusicPlayer instance = null;
-
-    private void Awake()
+    public class MusicPlayer : MonoBehaviour
     {
-        if (instance != null)
+        static MusicPlayer instance = null;
+
+        private void Awake()
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            GameObject.DontDestroyOnLoad(gameObject);
+            if (instance != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                instance = this;
+                GameObject.DontDestroyOnLoad(gameObject);
+            }
         }
     }
 }

@@ -5,10 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class OptionsScene : MonoBehaviour {
-
-    public void Play()
+namespace Maze
+{
+    public class OptionsScene : MonoBehaviour
     {
-        SceneManager.LoadScene("OptionsMenu");
+
+        public void Play()
+        {
+            SceneManager.LoadScene("OptionsMenu"); // Load Options Menu
+        }
     }
 }
