@@ -12,7 +12,7 @@ namespace Maze
         #region Variables
         [Header("Bools")]
         public bool isMute;
-        public bool fullScreenToggle;
+        public bool isFullScreen;
 
         [Header("Keys")]
         public KeyCode forward;
@@ -29,7 +29,7 @@ namespace Maze
         public Text rightText;
 
         [Header("GUI Elements")]
-        public Toggle fullWindowToggle;
+        public Toggle fullScreenToggle;
         public Toggle muteToggle;
 
         [Header("Resolutions")]
@@ -130,7 +130,8 @@ namespace Maze
         }
         public void Default()
         {
-            Screen.SetResolution(1980, 1080, true);
+            resolutionDropDown.captionText.text = "1920*1080";
+            Screen.SetResolution(1920, 1080, true);
             volumeSlider.value = 1;
             brightnessSlider.value = 1;
             if (isMute)
@@ -345,13 +346,13 @@ namespace Maze
         #region FullScreen Toggle and Resolutions
         public void FullScreenToggle()
         {
-            fullScreenToggle = !fullScreenToggle;
+            isFullScreen = !isFullScreen;
             Screen.fullScreen = !Screen.fullScreen;
         }
         public void ResolutionDropDown()
         {
             index = resolutionDropDown.value;
-            Screen.SetResolution(resX[index], resY[index], fullScreenToggle);
+            Screen.SetResolution(resX[index], resY[index], isFullScreen);
         }
         #endregion
     }
