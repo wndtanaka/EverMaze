@@ -8,15 +8,10 @@ namespace Maze
     public class SceneNavigator : MonoBehaviour
     {
         public GameManager game;
-        public bool isPause;
 
         public void LoadLevel(string name)
         {
             SceneManager.LoadScene("Scene_01"); // Start Level_01 scene
-            if (isPause)
-            {
-                game.pauseMenu.SetActive(true);
-            }
         }
         public void OptionScene()
         {
@@ -33,7 +28,11 @@ namespace Maze
         }
         public void PauseOptions()
         {
-            SceneManager.LoadScene("GamePauseMenu");
+            SceneManager.LoadScene("GamePauseMenu",LoadSceneMode.Additive);
+        }
+        public void BackToPauseMenu()
+        {
+            SceneManager.UnloadSceneAsync("GamePauseMenu");
         }
     }
 }
