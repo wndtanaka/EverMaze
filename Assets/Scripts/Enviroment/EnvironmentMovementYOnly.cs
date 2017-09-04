@@ -7,11 +7,9 @@ public class EnvironmentMovementYOnly : MonoBehaviour
     // Variables
     public float rotationSpeed = 20f;
     public float deceleration = 10f;
-    public float inputV;
-    public float inputH;
-    public float minRot = -10f;
-    public float maxRot = 10f;
-    public const float yRot = 0;
+    float inputV;
+    float inputH;
+    const float yRot = 0;
 
     private Rigidbody rigid;
 
@@ -45,14 +43,6 @@ public class EnvironmentMovementYOnly : MonoBehaviour
         inputV = Input.GetAxis("Vertical") * rotationSpeed * Time.deltaTime;
         inputH = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
 
-        //transform.Rotate(0, -inputV, 0);
         transform.Rotate(0, inputH, 0);
-
-        //Vector3 currentRotation = transform.localRotation.eulerAngles;
-        //currentRotation.x = Mathf.Clamp(currentRotation.x, minRot, maxRot);
-        //currentRotation.z = Mathf.Clamp(currentRotation.z, minRot, maxRot);
-        //transform.localRotation = Quaternion.Euler(currentRotation);
-
-
     }
 }

@@ -7,7 +7,7 @@ namespace Maze
 {
     public class SceneNavigator : MonoBehaviour
     {
-        public GameManager game;
+        GameManager game;
 
         public void LoadLevel(string name)
         {
