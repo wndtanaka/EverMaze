@@ -16,7 +16,7 @@ public class EnvironmentMovementYOnly : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Time.timeScale = 5;
+        Time.timeScale = 1;
         rigid = GetComponent<Rigidbody>();
         
     }
