@@ -9,15 +9,7 @@ namespace Maze
     public class SceneNavigator : MonoBehaviour
     {
         GUIManager game;
-        public Timer timer;
 
-        private void Update()
-        {
-            if (timer.timer == 0)
-            {
-                SceneManager.LoadScene("GameOverScene");
-            }
-        }
         public void LoadLevel()
         {
             SceneManager.LoadScene("Scene_01"); // Start Level_01 scene

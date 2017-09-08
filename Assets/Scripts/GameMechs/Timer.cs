@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Maze
 {
@@ -17,6 +18,10 @@ namespace Maze
 
         void Update()
         {
+            if (timer == 0)
+            {
+                SceneManager.LoadScene("GameOverScene");
+            }   
             //if (timer > 0)
             //{
             //    timer -= Time.deltaTime; // count down this may take us below 0
@@ -35,7 +40,10 @@ namespace Maze
             timer -= Time.deltaTime;
             clockText.text = timer.ToString("F1");
 
-
+            if (timer == 0)
+            {
+                SceneManager.LoadScene("GameOverScene");
+            }
         }
         void LateUpdate()
         {

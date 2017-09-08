@@ -11,7 +11,7 @@ namespace Maze
         public int lives = 3;
         public Transform spawnPoint;
         public Text livesText;
-        public Text spawnClock;
+        // public Text spawnClock;
         public GameObject level;
 
 
