@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Maze
 {
-    public class Destroyer : MonoBehaviour
+    public class KeyPickUp : MonoBehaviour
     {
         void OnTriggerEnter(Collider col)
         {

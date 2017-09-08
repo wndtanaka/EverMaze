@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Maze
 {
-    public class GameManager : MonoBehaviour
+    public class GUIManager : MonoBehaviour
     {
         public GameObject pauseMenu;
 
@@ -17,7 +17,7 @@ namespace Maze
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Time.timeScale = 5;
+                Time.timeScale = 1;
             }
         }
         // Update is called once per frame
@@ -36,7 +36,7 @@ namespace Maze
         {
             if (pause)
             {
-                Time.timeScale = 5;
+                Time.timeScale = 1;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 pause = false;

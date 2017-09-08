@@ -7,8 +7,16 @@ namespace Maze
 {
     public class SceneNavigator : MonoBehaviour
     {
-        GameManager game;
+        GUIManager game;
+        public Timer timer;
 
+        void Update()
+        {
+            if (timer.timer == 0)
+            {
+                SceneManager.LoadScene("GameOverScene");
+            }
+        }
         public void LoadLevel(string name)
         {
             SceneManager.LoadScene("Scene_01"); // Start Level_01 scene
