@@ -45,7 +45,6 @@ namespace Maze
                     level.transform.rotation = Quaternion.Euler(0, 0, 0);
                     transform.position = spawnPoint.position;
                     lives--;
-                    OnGUI();
                 }
                 if (lives <= 0)
                 {
@@ -53,17 +52,6 @@ namespace Maze
                     SceneManager.LoadScene("GameOverScene");
                 }
             }
-        }
-        void OnGUI()
-        {
-            float scrW = Screen.width / 16;
-            float scrH = Screen.height / 9;
-
-            int mins = Mathf.FloorToInt(spawnTimer / 60);
-            int secs = Mathf.FloorToInt(spawnTimer - mins * 60);
-
-            string clockTime = string.Format("{0:0}:{1:00}", mins, secs);
-            spawnClock.text = clockTime;
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 namespace Maze
 {
@@ -10,14 +11,14 @@ namespace Maze
         GUIManager game;
         public Timer timer;
 
-        void Update()
+        private void Update()
         {
             if (timer.timer == 0)
             {
                 SceneManager.LoadScene("GameOverScene");
             }
         }
-        public void LoadLevel(string name)
+        public void LoadLevel()
         {
             SceneManager.LoadScene("Scene_01"); // Start Level_01 scene
         }
@@ -41,6 +42,13 @@ namespace Maze
         public void BackToPauseMenu()
         {
             SceneManager.UnloadSceneAsync("GamePauseMenu");
+        }
+        private void OnTriggerEnter(Collider other)
+        {
+            if (GameObject.FindGameObjectWithTag("exit"))
+            {
+                SceneManager.LoadScene("Scene_01");
+            }
         }
     }
 }

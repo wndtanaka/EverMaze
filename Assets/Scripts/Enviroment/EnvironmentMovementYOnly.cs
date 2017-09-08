@@ -7,7 +7,6 @@ public class EnvironmentMovementYOnly : MonoBehaviour
     // Variables
     public float rotationSpeed = 20f;
     public float deceleration = 10f;
-    float inputV;
     float inputH;
     const float yRot = 0;
 
@@ -25,7 +24,6 @@ public class EnvironmentMovementYOnly : MonoBehaviour
     void Update()
     {
         // Call deceleration and rotation
-       
         Rotation();
         Decelerate();
         transform.rotation = Quaternion.Euler(0, transform.eulerAngles.y, 0);
@@ -40,9 +38,7 @@ public class EnvironmentMovementYOnly : MonoBehaviour
 
     void Rotation()
     {
-        inputV = Input.GetAxis("Vertical") * rotationSpeed * Time.deltaTime;
         inputH = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-
         transform.Rotate(0, inputH, 0);
     }
 }
