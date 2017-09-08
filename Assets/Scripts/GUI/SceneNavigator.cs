@@ -47,7 +47,7 @@ namespace Maze
         {
             if (GameObject.FindGameObjectWithTag("exit"))
             {
-                SceneManager.LoadScene("Scene_01");
+                SceneManager.LoadScene("Scene_02");
             }
         }
     }
