@@ -46,6 +46,8 @@ namespace Maze
 
         void Start()
         {
+            Time.timeScale = 5;
+
             music = GameObject.FindGameObjectWithTag("music").GetComponent<AudioSource>();
             if (volumeSlider != null && music != null)
             {

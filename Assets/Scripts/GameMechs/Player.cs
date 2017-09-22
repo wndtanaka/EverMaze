@@ -16,11 +16,11 @@ namespace Maze
 
 
         private float spawnTimer = 3;
-
+        
         // Use this for initialization
         void Start()
         {
-
+            Time.timeScale = 1;
         }
 
         // Update is called once per frame

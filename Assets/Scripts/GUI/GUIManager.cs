@@ -13,11 +13,11 @@ namespace Maze
 
         void Start()
         {
+            Time.timeScale = 1;
             if (!gameScene)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                Time.timeScale = 1;
             }
         }
         // Update is called once per frame
