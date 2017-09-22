@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnvironmentMovementYOnly : MonoBehaviour
 {
     // Variables
-    public float rotationSpeed = 20f;
+    public float rotationSpeed = 50f;
     public float deceleration = 10f;
     float inputH;
     const float yRot = 0;
@@ -17,7 +17,7 @@ public class EnvironmentMovementYOnly : MonoBehaviour
     {
         Time.timeScale = 1;
         rigid = GetComponent<Rigidbody>();
-        
+
     }
 
     // Update is called once per frame

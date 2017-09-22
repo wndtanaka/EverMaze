@@ -11,7 +11,7 @@ namespace Maze
 
         public void LoadLevel()
         {
-            SceneManager.LoadScene("Scene_01"); // Start Level_01 scene
+            SceneManager.LoadScene("Level_01"); // Start Level_01 scene
         }
         public void OptionScene()
         {
@@ -36,9 +36,9 @@ namespace Maze
         }
         private void OnTriggerEnter(Collider other)
         {
-            if (GameObject.FindGameObjectWithTag("exit"))
+            if (GameObject.FindGameObjectWithTag("Goal"))
             {
-                SceneManager.LoadScene("Scene_02");
+                SceneManager.LoadScene("Level_02");
             }
         }
     }

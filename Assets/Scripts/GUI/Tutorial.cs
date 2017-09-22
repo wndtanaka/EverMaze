@@ -5,21 +5,30 @@ using UnityEngine;
 public class Tutorial : MonoBehaviour
 {
 
-    public GameObject tutorial;
-
+    bool isTutorialShown;
     // Use this for initialization
     void Start()
     {
-        Time.timeScale = 0;
+        isTutorialShown = true;
+        this.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (isTutorialShown)
         {
-            tutorial.SetActive(false);
-            Time.timeScale = 1;
+            Debug.Log("Turotial Active");
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                this.gameObject.SetActive(false);
+                Time.timeScale = 1;
+                isTutorialShown = false;
+                Debug.Log("Tutorial Deactivate");
+            }
         }
     }
 }

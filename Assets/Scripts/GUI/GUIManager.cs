@@ -7,17 +7,22 @@ namespace Maze
     public class GUIManager : MonoBehaviour
     {
         public GameObject pauseMenu;
+        //public GameObject tutorial;
 
-        public bool pause;
-        public bool gameScene;
+        private bool pause;
+        private bool gameScene;
+
+        //private bool isTutorialShown;
 
         void Start()
         {
-            Time.timeScale = 1;
-            if (!gameScene)
+            //tutorial.SetActive(true);
+            //isTutorialShown = true;
+            if (gameScene)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                Time.timeScale = 1;
             }
         }
         // Update is called once per frame
@@ -27,6 +32,20 @@ namespace Maze
             {
                 TogglePauseMenu();
             }
+            //if (isTutorialShown)
+            //{
+            //    Debug.Log("Turotial Active");
+            //    Time.timeScale = 0;
+            //    Cursor.lockState = CursorLockMode.Locked;
+            //    Cursor.visible = false;
+            //    if (Input.GetKeyDown(KeyCode.Space))
+            //    {
+            //        tutorial.SetActive(false);
+            //        Time.timeScale = 1;
+            //        isTutorialShown = false;
+            //        Debug.Log("Tutorial Deactivate");
+            //    }
+            //}
         }
         public void PauseMenu()
         {
