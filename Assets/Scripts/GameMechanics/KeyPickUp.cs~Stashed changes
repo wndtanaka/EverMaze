@@ -1,26 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 namespace Maze
 {
     public class KeyPickUp : MonoBehaviour
     {
+<<<<<<< Updated upstream:Assets/Scripts/GameMechs/KeyPickUp.cs
         public GameObject[] key;
         public GameObject exit;
         public int keyCount;
+=======
+        public Text keyCounter;
+        int keyCount;
+>>>>>>> Stashed changes:Assets/Scripts/GameMechanics/KeyPickUp.cs
 
         void OnTriggerEnter(Collider col)
         {
             if (GameObject.FindGameObjectWithTag("key"))
             {
+<<<<<<< Updated upstream:Assets/Scripts/GameMechs/KeyPickUp.cs
                 keyCount++;
                 gameObject.SetActive(false);
                 if (keyCount >= key.Length)
                 {
                     exit.SetActive(true);
                 }
+=======
+                Destroy(gameObject);
+                keyCount++;
+>>>>>>> Stashed changes:Assets/Scripts/GameMechanics/KeyPickUp.cs
             }
+            Debug.Log(keyCount);
+            
+        }
+        void Update()
+        {
+            keyCounter.text = "Key: " + keyCount + " / 3";
         }
     }
 }
