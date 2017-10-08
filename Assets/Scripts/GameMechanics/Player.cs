@@ -15,8 +15,11 @@ namespace Maze
         public GameObject level;
         public Text keyCounter;
         public int keyCount;
+        public int maxKey;
+        public GameObject playerPrefab;
 
-        private float spawnTimer = 3;
+        float spawnDelay = 3f;
+
 
         // Use this for initialization
         void Start()
@@ -28,15 +31,15 @@ namespace Maze
         void Update()
         {
             livesText.text = "Lives: " + lives;
-            keyCounter.text = "Key: " + keyCount + " / 3";
-            if (spawnTimer > 0)
-            {
-                spawnTimer -= Time.deltaTime; // count down this may take us below 0
-            }
-            else
-            {
-                spawnTimer = 0; // this sets us back to 0
-            }
+            keyCounter.text = "Key: " + keyCount + " / " + maxKey;
+            //if (spawnTimer > 0)
+            //{
+            //    spawnTimer -= Time.deltaTime; // count down this may take us below 0
+            //}
+            //else
+            //{
+            //    spawnTimer = 0; // this sets us back to 0
+            //}
         }
         void OnCollisionEnter(Collision col)
         {
@@ -44,9 +47,12 @@ namespace Maze
             {
                 if (lives > 0)
                 {
-                    level.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    transform.position = spawnPoint.position;
                     lives--;
+                    
+                    Destroy(gameObject);
+                    StartCoroutine("Respawn");
+                    
+                    Debug.Log("Respawning");
                 }
                 if (lives <= 0)
                 {
@@ -63,6 +69,13 @@ namespace Maze
                 keyCount++;
             }
             Debug.Log(keyCount);
+        }
+
+        IEnumerator Respawn()
+        {
+            level.transform.rotation = Quaternion.Euler(0, 0, 0);
+            yield return new WaitForSeconds(spawnDelay);
+            Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
         }
     }
 }
