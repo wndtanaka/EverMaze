@@ -6,8 +6,11 @@ namespace Maze
 {
     public class GateOpener : MonoBehaviour
     {
-        Animator anim;
         public Player player;
+        public Light right;
+        public Light left;
+
+        Animator anim;
         GameObject block;
 
         // Use this for initialization
@@ -22,10 +25,14 @@ namespace Maze
             if (player.keyCount == player.maxKey)
             {
                 block.SetActive(false);
+                left.color = Color.green;
+                right.color = Color.green;
             }
             else
             {
                 block.SetActive(true);
+                left.color = Color.red;
+                right.color = Color.red;
             }
         }
         private void OnTriggerEnter(Collider other)

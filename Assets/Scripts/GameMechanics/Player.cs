@@ -48,10 +48,8 @@ namespace Maze
                 if (lives > 0)
                 {
                     lives--;
-                    
-                    Destroy(gameObject);
-                    StartCoroutine("Respawn");
-                    
+                    level.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    transform.position = spawnPoint.position;
                     Debug.Log("Respawning");
                 }
                 if (lives <= 0)
@@ -71,11 +69,12 @@ namespace Maze
             Debug.Log(keyCount);
         }
 
-        IEnumerator Respawn()
-        {
-            level.transform.rotation = Quaternion.Euler(0, 0, 0);
-            yield return new WaitForSeconds(spawnDelay);
-            Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-        }
+        //IEnumerator Respawn()
+        //{
+        //    level.transform.rotation = Quaternion.Euler(0, 0, 0);
+        //    Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+        //    yield return new WaitForSeconds(spawnDelay);
+
+        //}
     }
 }
